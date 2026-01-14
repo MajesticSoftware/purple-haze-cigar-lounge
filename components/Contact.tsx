@@ -2,31 +2,17 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    eventDate: '',
-    message: '',
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const mailtoLink = `mailto:phazecigars2024@protonmail.com?subject=Event Inquiry from ${formState.name}&body=Name: ${formState.name}%0D%0AEmail: ${formState.email}%0D%0APhone: ${formState.phone}%0D%0AEvent Type: ${formState.eventType}%0D%0AEvent Date: ${formState.eventDate}%0D%0A%0D%0AMessage:%0D%0A${formState.message}`
-    window.location.href = mailtoLink
-  }
 
   return (
     <section id="contact" className="py-24 md:py-32 bg-dark-lighter/30 relative">
       <div className="absolute inset-0 bg-purple-glow opacity-20" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10" ref={ref}>
+      <div className="max-w-4xl mx-auto px-6 relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -43,105 +29,13 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm text-white/60 mb-2">Your Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formState.name}
-                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-dark-card border border-white/10 rounded-xl focus:border-purple-vivid focus:outline-none transition-colors text-white"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-white/60 mb-2">Email Address *</label>
-                  <input
-                    type="email"
-                    required
-                    value={formState.email}
-                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    className="w-full px-4 py-3 bg-dark-card border border-white/10 rounded-xl focus:border-purple-vivid focus:outline-none transition-colors text-white"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-              
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm text-white/60 mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                    value={formState.phone}
-                    onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                    className="w-full px-4 py-3 bg-dark-card border border-white/10 rounded-xl focus:border-purple-vivid focus:outline-none transition-colors text-white"
-                    placeholder="(555) 123-4567"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-white/60 mb-2">Event Type</label>
-                  <select
-                    value={formState.eventType}
-                    onChange={(e) => setFormState({ ...formState, eventType: e.target.value })}
-                    className="w-full px-4 py-3 bg-dark-card border border-white/10 rounded-xl focus:border-purple-vivid focus:outline-none transition-colors text-white appearance-none cursor-pointer"
-                  >
-                    <option value="">Select event type</option>
-                    <option value="corporate">Corporate Event</option>
-                    <option value="wedding">Wedding/Celebration</option>
-                    <option value="private">Private Party</option>
-                    <option value="golf">Golf Tournament</option>
-                    <option value="festival">Festival/Pop-up</option>
-                    <option value="charity">Charity Event</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm text-white/60 mb-2">Event Date</label>
-                <input
-                  type="date"
-                  value={formState.eventDate}
-                  onChange={(e) => setFormState({ ...formState, eventDate: e.target.value })}
-                  className="w-full px-4 py-3 bg-dark-card border border-white/10 rounded-xl focus:border-purple-vivid focus:outline-none transition-colors text-white"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm text-white/60 mb-2">Tell Us About Your Event</label>
-                <textarea
-                  rows={4}
-                  value={formState.message}
-                  onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="w-full px-4 py-3 bg-dark-card border border-white/10 rounded-xl focus:border-purple-vivid focus:outline-none transition-colors text-white resize-none"
-                  placeholder="Share details about your event, guest count, location, and any special requests..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-4 bg-gradient-to-r from-purple-vivid to-purple-deep rounded-xl text-white font-semibold hover:shadow-xl hover:shadow-purple-vivid/30 transition-all duration-300"
-              >
-                Send Inquiry
-              </button>
-            </form>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-8"
-          >
-            <div className="card-gradient gold-border rounded-2xl p-8">
+            <div className="card-gradient gold-border rounded-2xl p-8 h-full">
               <h3 className="text-xl font-serif font-semibold mb-6">Contact Information</h3>
               
               <div className="space-y-6">
@@ -183,8 +77,14 @@ export default function Contact() {
                 </div>
               </div>
             </div>
+          </motion.div>
 
-            <div className="card-gradient purple-border rounded-2xl p-8">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="card-gradient purple-border rounded-2xl p-8 h-full">
               <h3 className="text-xl font-serif font-semibold mb-4">Why Choose Us?</h3>
               <ul className="space-y-3">
                 {[
