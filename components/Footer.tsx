@@ -79,8 +79,8 @@ export default function Footer() {
           <p className="text-white/30 text-sm">
             © {currentYear} Purple Haze Mobile Cigar Lounge. All rights reserved.
           </p>
-          <p className="text-white/20 text-xs mt-2">
-            Creating memorable moments, one cigar at a time.
+          <p className="text-white/30 text-sm mt-2 italic">
+            &ldquo;Let me bring the cigar experience to you!&rdquo;
           </p>
         </motion.div>
       </div>

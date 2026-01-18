@@ -31,8 +31,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-2 border border-gold/30 rounded-full text-gold text-sm uppercase tracking-widest">
-            Premium Mobile Experience
+          <span className="inline-block px-5 py-2.5 border border-gold/30 rounded-full text-gold text-sm sm:text-base italic tracking-wide">
+            &ldquo;Let me bring the cigar experience to you!&rdquo;
           </span>
         </motion.div>
 
