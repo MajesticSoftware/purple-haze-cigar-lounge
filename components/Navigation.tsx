@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -35,9 +36,13 @@ export default function Navigation() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-vivid to-purple-deep flex items-center justify-center">
-              <span className="text-gold font-serif font-bold text-lg">PH</span>
-            </div>
+            <Image
+              src="/PurpleHazeLogo.jpeg"
+              alt="Purple Haze Cigars Mobile Lounge"
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-full object-cover"
+            />
             <span className="font-serif text-xl font-semibold hidden sm:block">
               Purple Haze
             </span>

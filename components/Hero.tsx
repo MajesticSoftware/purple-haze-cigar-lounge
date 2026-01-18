@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -8,6 +9,22 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark pointer-events-none" />
       
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="mb-8"
+        >
+          <Image
+            src="/PurpleHazeLogo.jpeg"
+            alt="Purple Haze Cigars Mobile Lounge"
+            width={180}
+            height={180}
+            className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover mx-auto shadow-2xl shadow-purple-vivid/30 ring-2 ring-gold/30"
+            priority
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
