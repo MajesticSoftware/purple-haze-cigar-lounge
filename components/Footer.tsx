@@ -18,7 +18,7 @@ export default function Footer() {
           >
             <Image
               src="/PurpleHazeLogo.jpeg"
-              alt="Purple Haze Cigars Mobile Lounge"
+              alt="Purple Haze Mobile Cigar Lounge logo"
               width={48}
               height={48}
               className="w-12 h-12 rounded-full object-cover"
@@ -39,6 +39,7 @@ export default function Footer() {
             <a href="#home" className="text-white/50 hover:text-gold transition-colors">Home</a>
             <a href="#about" className="text-white/50 hover:text-gold transition-colors">About</a>
             <a href="#services" className="text-white/50 hover:text-gold transition-colors">Services</a>
+            <a href="#gallery" className="text-white/50 hover:text-gold transition-colors">Gallery</a>
             <a href="#experience" className="text-white/50 hover:text-gold transition-colors">Experience</a>
             <a href="#contact" className="text-white/50 hover:text-gold transition-colors">Contact</a>
           </motion.div>

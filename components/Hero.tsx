@@ -17,7 +17,7 @@ export default function Hero() {
         >
           <Image
             src="/PurpleHazeLogo.jpeg"
-            alt="Purple Haze Cigars Mobile Lounge"
+            alt="Purple Haze Mobile Cigar Lounge - Premium mobile cigar experience in Maryland, DC and Virginia"
             width={180}
             height={180}
             className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover mx-auto shadow-2xl shadow-purple-vivid/30 ring-2 ring-gold/30"

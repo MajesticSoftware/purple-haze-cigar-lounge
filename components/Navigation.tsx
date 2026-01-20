@@ -8,6 +8,7 @@ const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
+  { href: '#gallery', label: 'Gallery' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
 ]
@@ -38,7 +39,7 @@ export default function Navigation() {
           <a href="#home" className="flex items-center gap-3">
             <Image
               src="/PurpleHazeLogo.jpeg"
-              alt="Purple Haze Cigars Mobile Lounge"
+              alt="Purple Haze Mobile Cigar Lounge logo"
               width={48}
               height={48}
               className="w-12 h-12 rounded-full object-cover"
