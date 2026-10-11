@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
+
+const flyerSrc = '/UpdatedFLyer.JPEG'
 
 const packages = [
   {
@@ -23,7 +26,7 @@ const packages = [
     name: 'Gold Package',
     price: '$1,350',
     deposit: '$650 Deposit',
-    duration: '4 Hours 30 Minutes',
+    duration: '6 Hours',
     color: 'gold',
     featured: true,
     features: [
@@ -126,6 +129,42 @@ export default function Pricing() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-20 text-center"
+        >
+          <h3 className="text-3xl md:text-4xl font-serif font-bold mb-8">
+            Our <span className="text-gradient">Flyer</span>
+          </h3>
+          <a
+            href={flyerSrc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block max-w-md mx-auto rounded-2xl overflow-hidden gold-border glow-gold transition-transform duration-500 hover:-translate-y-2"
+          >
+            <Image
+              src={flyerSrc}
+              alt="Purple Haze Mobile Cigar Lounge flyer with Purple and Gold package pricing"
+              width={1290}
+              height={1925}
+              className="w-full h-auto"
+              sizes="(max-width: 768px) 100vw, 448px"
+            />
+          </a>
+          <a
+            href={flyerSrc}
+            download="PurpleHazeFlyer.jpeg"
+            className="mt-8 inline-flex items-center gap-2 px-8 py-4 border border-gold/50 rounded-full text-gold font-medium hover:bg-gold/10 transition-all duration-300"
+          >
+            Download Flyer
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </a>
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}

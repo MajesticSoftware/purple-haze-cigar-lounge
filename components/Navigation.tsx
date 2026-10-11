@@ -9,6 +9,7 @@ const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#pricing', label: 'Pricing' },
+  { href: '#events', label: 'Events' },
   { href: '#gallery', label: 'Gallery' },
   { href: '#experience', label: 'Experience' },
   { href: '#contact', label: 'Contact' },
@@ -45,12 +46,12 @@ export default function Navigation() {
               height={48}
               className="w-12 h-12 rounded-full object-cover"
             />
-            <span className="font-serif text-xl font-semibold hidden sm:block">
+            <span className="font-serif text-xl font-semibold hidden sm:block lg:hidden xl:block whitespace-nowrap">
               Purple Haze
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -62,7 +63,7 @@ export default function Navigation() {
             ))}
             <a
               href="#contact"
-              className="px-6 py-2 bg-gradient-to-r from-purple-vivid to-purple-deep rounded-full text-white text-sm font-medium hover:shadow-lg hover:shadow-purple-vivid/30 transition-all duration-300"
+              className="px-6 py-2 whitespace-nowrap bg-gradient-to-r from-purple-vivid to-purple-deep rounded-full text-white text-sm font-medium hover:shadow-lg hover:shadow-purple-vivid/30 transition-all duration-300"
             >
               Book Now
             </a>
@@ -70,7 +71,7 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+            className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           >
             <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
             <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
@@ -85,7 +86,7 @@ export default function Navigation() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-dark/98 backdrop-blur-lg pt-24 md:hidden"
+            className="fixed inset-0 z-40 bg-dark/98 backdrop-blur-lg pt-24 lg:hidden"
           >
             <div className="flex flex-col items-center gap-8 p-8">
               {navLinks.map((link, i) => (
